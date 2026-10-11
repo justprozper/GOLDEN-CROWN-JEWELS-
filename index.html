@@ -1,1 +1,932 @@
-hey
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Golden Crown Jewels | Luxury Jewellery</title>
+
+<meta name="description" content="Discover elegant gold jewellery, timeless pieces, and customised jewellery at Golden Crown Jewels.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4af37;
+    --light-gold: #f5df91;
+    --black: #050505;
+    --panel: #111111;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* MOVING GOLDEN CROWNS */
+
+.crown-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.crown {
+    position: absolute;
+    bottom: -70px;
+    color: var(--gold);
+    opacity: 0.16;
+    animation: floatCrown linear infinite;
+}
+
+.crown:nth-child(1) {
+    left: 8%;
+    font-size: 24px;
+    animation-duration: 16s;
+}
+
+.crown:nth-child(2) {
+    left: 25%;
+    font-size: 17px;
+    animation-duration: 22s;
+    animation-delay: 3s;
+}
+
+.crown:nth-child(3) {
+    left: 45%;
+    font-size: 30px;
+    animation-duration: 19s;
+    animation-delay: 5s;
+}
+
+.crown:nth-child(4) {
+    left: 67%;
+    font-size: 20px;
+    animation-duration: 24s;
+    animation-delay: 2s;
+}
+
+.crown:nth-child(5) {
+    left: 88%;
+    font-size: 27px;
+    animation-duration: 18s;
+    animation-delay: 7s;
+}
+
+@keyframes floatCrown {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.16;
+    }
+
+    85% {
+        opacity: 0.16;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+/* KEEP CONTENT ABOVE THE BACKGROUND */
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.94);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    padding: 18px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 82vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(212, 175, 55, 0.09),
+            transparent 65%
+        );
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero-crown {
+    font-size: 65px;
+    margin-bottom: 10px;
+    display: inline-block;
+    animation: crownGlow 3s ease-in-out infinite;
+}
+
+@keyframes crownGlow {
+    0%, 100% {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 2px #d4af37);
+    }
+
+    50% {
+        transform: translateY(-5px);
+        filter: drop-shadow(0 0 14px #d4af37);
+    }
+}
+
+.hero h1 {
+    color: var(--gold);
+    font-size: clamp(34px, 7vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #dddddd;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--gold);
+    color: #080808;
+    padding: 13px 26px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+.section {
+    padding: 65px 6%;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--gold);
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-description {
+    text-align: center;
+    color: #bbbbbb;
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+
+/* SEARCH AND CATEGORIES */
+
+.controls {
+    max-width: 900px;
+    margin: 0 auto 35px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.controls input,
+.controls select {
+    background: #111;
+    border: 1px solid #655522;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    min-width: 220px;
+    max-width: 100%;
+    font-size: 15px;
+}
+
+.controls input:focus,
+.controls select:focus {
+    outline: 1px solid var(--gold);
+}
+
+/* PRODUCTS */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 230px), 1fr)
+    );
+    gap: 24px;
+}
+
+.product-card {
+    background: rgba(17, 17, 17, 0.96);
+    border: 1px solid #332b16;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.product-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    background: #181818;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info h3 {
+    color: var(--light-gold);
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: #c4c4c4;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.product-info button {
+    width: 100%;
+}
+
+.gold-button {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.gold-button:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.no-products {
+    display: none;
+    color: #ccc;
+    text-align: center;
+    padding: 25px;
+}
+
+/* ABOUT */
+
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    background: rgba(17, 17, 17, 0.92);
+    padding: 35px 25px;
+    border: 1px solid #443919;
+    border-radius: 8px;
+}
+
+.about-box p {
+    color: #dddddd;
+    margin-top: 15px;
+}
+
+/* CUSTOM JEWELLERY */
+
+.custom-section {
+    text-align: center;
+    background: rgba(212, 175, 55, 0.055);
+    border-top: 1px solid #302710;
+    border-bottom: 1px solid #302710;
+}
+
+.custom-section p {
+    color: #dddddd;
+    max-width: 650px;
+    margin: 15px auto 25px;
+}
+
+/* CONTACT */
+
+.contact-box {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    background: rgba(17, 17, 17, 0.95);
+    border: 1px solid #443919;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact-box p {
+    margin: 12px 0;
+    color: #dddddd;
+    overflow-wrap: anywhere;
+}
+
+.contact-box a {
+    color: var(--light-gold);
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+/* CART */
+
+.cart-box {
+    max-width: 750px;
+    margin: 30px auto 0;
+    padding: 22px;
+    background: rgba(17, 17, 17, 0.97);
+    border: 1px solid #443919;
+    border-radius: 8px;
+}
+
+.cart-box h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #292929;
+}
+
+.cart-item span {
+    overflow-wrap: anywhere;
+}
+
+.remove-button {
+    background: transparent;
+    color: #ff9a9a;
+    border: 1px solid #754444;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.cart-note {
+    color: #bdbdbd;
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 1px solid #443919;
+    color: #aaa;
+    font-size: 13px;
+    background: #050505;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px 4%;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 21px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+
+    .section {
+        padding: 48px 5%;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .contact-box {
+        padding: 22px 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ANIMATED CROWN BACKGROUND -->
+
+<div class="crown-background" aria-hidden="true">
+    <span class="crown">♛</span>
+    <span class="crown">♛</span>
+    <span class="crown">♛</span>
+    <span class="crown">♛</span>
+    <span class="crown">♛</span>
+</div>
+
+<!-- HEADER -->
+
+<header>
+    <div class="navbar">
+        <div class="logo">♛ GOLDEN CROWN JEWELS</div>
+
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#products">Collections</a>
+            <a href="#about">About</a>
+            <a href="#custom">Custom Jewellery</a>
+            <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-crown">♛</div>
+
+        <h1>Golden Crown Jewels</h1>
+
+        <p>
+            Discover timeless elegance, beautiful jewellery,
+            and customised pieces made to express your style.
+        </p>
+
+        <a href="#products" class="button">
+            Explore Our Collection
+        </a>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="section" id="products">
+    <h2 class="section-title">Our Collection</h2>
+
+    <p class="section-description">
+        Explore our jewellery collection and find a piece
+        that expresses your individuality.
+    </p>
+
+    <div class="controls">
+        <input
+            type="search"
+            id="search"
+            placeholder="Search jewellery..."
+            aria-label="Search jewellery"
+        >
+
+        <select id="category" aria-label="Filter by category">
+            <option value="all">All Collections</option>
+            <option value="necklaces">Necklaces</option>
+            <option value="rings">Rings</option>
+            <option value="bracelets">Bracelets</option>
+            <option value="earrings">Earrings</option>
+            <option value="custom">Custom Jewellery</option>
+        </select>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+
+        <article class="product-card"
+            data-name="gold necklace"
+            data-category="necklaces">
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80"
+                alt="Elegant necklace"
+                loading="lazy"
+            >
+
+            <div class="product-info">
+                <h3>Elegant Necklaces</h3>
+                <p>Beautiful necklaces for everyday wear and special occasions.</p>
+                <button class="gold-button"
+                    onclick="addToCart('Elegant Necklaces')">
+                    Add to Cart
+                </button>
+            </div>
+        </article>
+
+        <article class="product-card"
+            data-name="luxury rings"
+            data-category="rings">
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80"
+                alt="Elegant jewellery ring"
+                loading="lazy"
+            >
+
+            <div class="product-info">
+                <h3>Luxury Rings</h3>
+                <p>Distinctive rings for memorable moments.</p>
+                <button class="gold-button"
+                    onclick="addToCart('Luxury Rings')">
+                    Add to Cart
+                </button>
+            </div>
+        </article>
+
+        <article class="product-card"
+            data-name="gold bracelets"
+            data-category="bracelets">
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=80"
+                alt="Stylish jewellery bracelet"
+                loading="lazy"
+            >
+
+            <div class="product-info">
+                <h3>Beautiful Bracelets</h3>
+                <p>Add a touch of elegance to your personal style.</p>
+                <button class="gold-button"
+                    onclick="addToCart('Beautiful Bracelets')">
+                    Add to Cart
+                </button>
+            </div>
+        </article>
+
+        <article class="product-card"
+            data-name="gold earrings"
+            data-category="earrings">
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80"
+                alt="Fashion earrings"
+                loading="lazy"
+            >
+
+            <div class="product-info">
+                <h3>Classic Earrings</h3>
+                <p>Elegant finishing touches for your favourite looks.</p>
+                <button class="gold-button"
+                    onclick="addToCart('Classic Earrings')">
+                    Add to Cart
+                </button>
+            </div>
+        </article>
+
+        <article class="product-card"
+            data-name="custom jewellery"
+            data-category="custom">
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80"
+                alt="Decorative jewellery design"
+                loading="lazy"
+            >
+
+            <div class="product-info">
+                <h3>Custom Jewellery</h3>
+                <p>Personalised jewellery designed around your ideas.</p>
+                <button class="gold-button"
+                    onclick="addToCart('Custom Jewellery')">
+                    Add to Cart
+                </button>
+            </div>
+        </article>
+
+        <article class="product-card"
+            data-name="special jewellery gifts"
+            data-category="custom">
+
+            <img
+                class="product-image"
+                src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80"
+                alt="Elegant jewellery accessories"
+                loading="lazy"
+            >
+
+            <div class="product-info">
+                <h3>Special Jewellery Gifts</h3>
+                <p>Discover meaningful pieces for someone special.</p>
+                <button class="gold-button"
+                    onclick="addToCart('Special Jewellery Gifts')">
+                    Add to Cart
+                </button>
+            </div>
+        </article>
+
+    </div>
+
+    <p class="no-products" id="no-products">
+        No matching products found. Try another search.
+    </p>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <div class="about-box">
+        <div class="hero-crown" style="font-size:45px;">♛</div>
+
+        <h3 style="color:#f5df91;">
+            Elegance in Every Detail
+        </h3>
+
+        <p>
+            Golden Crown Jewels celebrates elegance, individuality,
+            and timeless style. We offer a collection of beautiful
+            jewellery, with customised pieces for customers who want
+            something personal and unique.
+        </p>
+
+        <p>
+            Our goal is to help you find jewellery that makes
+            every moment feel special.
+        </p>
+    </div>
+</section>
+
+<!-- CUSTOM JEWELLERY -->
+
+<section class="section custom-section" id="custom">
+    <h2 class="section-title">Customised Jewellery</h2>
+
+    <p>
+        Have a special design in mind? Contact us by email to discuss
+        your preferred style, design ideas, and personalised jewellery
+        requests.
+    </p>
+
+    <a
+        class="button"
+        href="mailto:goldencrownjewels11@gmail.com?subject=Custom%20Jewellery%20Enquiry"
+    >
+        Enquire About Custom Designs
+    </a>
+</section>
+
+<!-- SHOPPING CART -->
+
+<section class="section" id="cart">
+    <h2 class="section-title">Your Shopping Cart</h2>
+
+    <p class="section-description">
+        Review the jewellery you have selected.
+        No prices are displayed on this website.
+    </p>
+
+    <div class="cart-box">
+        <h3>Selected Items</h3>
+
+        <div id="cart-items">
+            <p>Your cart is currently empty.</p>
+        </div>
+
+        <p class="cart-note">
+            Adding items to the cart does not place an order.
+            Contact the store to confirm availability and ordering.
+        </p>
+
+        <a
+            class="button"
+            id="email-order"
+            href="mailto:goldencrownjewels11@gmail.com?subject=Jewellery%20Enquiry"
+        >
+            Enquire by Email
+        </a>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <p class="section-description">
+        We would love to hear from you.
+        Contact Golden Crown Jewels for product enquiries,
+        customised jewellery, and other information.
+    </p>
+
+    <div class="contact-box">
+        <div class="hero-crown" style="font-size:45px;">♛</div>
+
+        <h3 style="color:#f5df91;">
+            Golden Crown Jewels
+        </h3>
+
+        <p>
+            <strong>Email:</strong><br>
+            <a href="mailto:goldencrownjewels11@gmail.com">
+                goldencrownjewels11@gmail.com
+            </a>
+        </p>
+
+        <p>
+            For product information and custom jewellery enquiries,
+            please send us an email.
+        </p>
+
+        <a
+            class="button"
+            href="mailto:goldencrownjewels11@gmail.com?subject=Golden%20Crown%20Jewels%20Enquiry"
+        >
+            Send Us an Email
+        </a>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>
+        <span>♛ Golden Crown Jewels</span>
+        &copy; <span id="year"></span>.
+        All rights reserved.
+    </p>
+
+    <p>Luxury • Elegance • Personal Style</p>
+</footer>
+
+<script>
+// AUTOMATIC COPYRIGHT YEAR
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+// PRODUCT SEARCH AND CATEGORY FILTER
+
+const searchInput = document.getElementById("search");
+const categorySelect = document.getElementById("category");
+const productCards = document.querySelectorAll(".product-card");
+const noProducts = document.getElementById("no-products");
+
+function filterProducts() {
+    const searchText = searchInput.value.toLowerCase().trim();
+    const selectedCategory = categorySelect.value;
+
+    let visibleCount = 0;
+
+    productCards.forEach(function(card) {
+        const name = card.dataset.name.toLowerCase();
+        const category = card.dataset.category;
+
+        const matchesSearch = name.includes(searchText);
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            category === selectedCategory;
+
+        const show = matchesSearch && matchesCategory;
+
+        card.style.display = show ? "" : "none";
+
+        if (show) {
+            visibleCount++;
+        }
+    });
+
+    noProducts.style.display =
+        visibleCount === 0 ? "block" : "none";
+}
+
+searchInput.addEventListener("input", filterProducts);
+categorySelect.addEventListener("change", filterProducts);
+
+
+// SHOPPING CART
+
+let cart = [];
+
+function addToCart(productName) {
+    cart.push(productName);
+    renderCart();
+
+    alert(productName + " added to your cart.");
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    renderCart();
+}
+
+function renderCart() {
+    const cartItems = document.getElementById("cart-items");
+    const cartCount 
